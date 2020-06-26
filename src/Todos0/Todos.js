@@ -36,6 +36,7 @@ class Todos extends React.Component {
             value={this.state.text}
             onChange={this.handleChange}
           />
+          <br />
           <div>
             Add a task:
             <button onClick={this.handleAddTodo}>+</button>

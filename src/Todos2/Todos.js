@@ -3,10 +3,11 @@ import Todo from "./Todo";
 import { v4 as uuid } from "uuid";
 import { addTodo } from "../actions";
 import { getTodos } from "../reducer";
-import { connect, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-function Todos({ todos }) {
+function Todos() {
   const [text, setText] = useState("");
+  const todos = useSelector((state) => getTodos(state));
   const dispatch = useDispatch();
 
   function handleChange(event) {
@@ -38,10 +39,4 @@ function Todos({ todos }) {
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    todos: getTodos(state),
-  };
-}
-
-export default connect(mapStateToProps)(Todos);
+export default Todos;

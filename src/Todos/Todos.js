@@ -23,6 +23,7 @@ function Todos({ todos, addTodo }) {
     <div>
       <div>
         <input type="text" value={text} onChange={handleChange} />
+        <br/>
         <div>
           Add a task:
           <button onClick={handleAddTodo}>+</button>
